@@ -16,7 +16,31 @@ local UIGradient_3 = Instance.new("UIGradient")
 local Error = Instance.new("Frame")
 local UICorner_3 = Instance.new("UICorner")
 local TextLabel_3 = Instance.new("TextLabel")
-local sound = Instance.new("Sound").SoundId == 2390695935
+
+-- Correct Sound setup
+local sound = Instance.new("Sound")
+sound.SoundId = "rbxassetid://2390695935"
+sound.Parent = ScreenGui
+
+-- Correct Drag setup
+local drag = Instance.new("UIDragDetector")
+drag.Parent = Base
+
+-- Setting up the hierarchy
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Base.Parent = ScreenGui
+UIGradient.Parent = Base
+UICorner.Parent = Base
+TextLabel.Parent = Base
+TextButton.Parent = Base
+UICorner_2.Parent = TextButton
+UIGradient_2.Parent = TextButton
+TextLabel_2.Parent = TextButton
+UIGradient_3.Parent = TextLabel_2
+Error.Parent = ScreenGui
+UICorner_3.Parent = Error
+TextLabel_3.Parent = Error
+
 
 --Properties:
 
